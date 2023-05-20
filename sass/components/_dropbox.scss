@@ -1,0 +1,79 @@
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 480px;
+    font-family: sans-serif;
+    margin: 100px auto;
+    padding: 20px;
+  }
+  #drop-area .highlight {
+    border-color: purple;
+  }
+
+  .my-form {
+    margin-bottom: 10px;
+  }
+  #gallery {
+    margin-top: 10px;
+  }
+  #gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+    &:hover{
+      background: #ddd;
+    }
+  }
+
+  #fileElem {
+    display: none;
+  }
+  .hidden {
+    visibility: hidden;
+  }
+  .btn--blue {
+    background: rgb(99, 99, 224);
+    border: 1px solid rgb(143, 143, 238);
+  }
+  .btn--gray {
+    background: #ccc;
+    border: 1px solid #ccc;
+  }
+  .btn--red {
+    background: #FF0000;
+    border: 1px solid #FF0000;
+  }
+  
+  #spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #09f;
+  
+    animation: spin 1s ease infinite;
+  }
+  
+.info-box{
+  margin: 0 auto;
+  width: 30rem;
+  background-color: beige;
+  border: .1rem solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  p {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+}

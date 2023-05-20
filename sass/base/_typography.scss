@@ -1,0 +1,29 @@
+*{
+    font-weight: 400;
+}
+
+.heading-primary {
+    @media (max-width:1200px){
+        font-size: 2rem;
+    }
+    color: $color-white;
+    text-transform: uppercase;
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    letter-spacing: .5rem;
+    animation-name: moveInTop;
+    animation-duration: 5s;
+}
+
+.heading-secondary {
+    @media (max-width:1200px){
+        font-size: $desktop-font;
+    }
+    color: $color-white;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+    font-weight: 400 ;
+    animation-name: moveInBottom;
+    animation-duration: 5s;
+}

@@ -1,0 +1,39 @@
+.u-horizontal-center{
+    margin: 0 auto;
+}
+
+/*leve margen alto*/
+.u-mt-litte{
+ margin-top: 1rem;
+}
+/*margen para titulos*/
+.u-mb-titles{
+    margin-bottom: 5rem;
+}
+.u-mb-little{
+    margin-bottom: 1rem;
+}
+.u-ml-tiny{
+    margin-left: .5rem;
+}
+.u-margin-vertical-lite{
+    margin: .4rem 0;
+}
+
+.u-padding-lite{
+    padding: .4rem;
+}
+.u-zoom{
+    transition: 1s;
+    &:hover{
+        @media (min-width:685px) {
+            transform: translateY(-1rem) scale(1.05);
+        }
+    }
+}
+
+.u-rounded-box{
+    margin: .3rem;
+    border-radius: 3%;
+    padding: $padding-medium;
+}

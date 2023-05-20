@@ -1,0 +1,31 @@
+.titles{
+
+    @media (max-width:900px){
+        font-size: $title-medium;
+    }
+    @media (max-width:650px){
+        font-size: $title-small;
+        margin-left: .8rem;
+    }
+    display: inline-block;
+    font-size: $title-big;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $color-green;
+    letter-spacing: .2rem;
+    margin-bottom: 5rem;
+    transition: 1s;
+    &:hover{
+        transform: scale(1.1) skewX(-15deg);
+
+    }
+}
+
+.titles[data-inviewport]{
+    opacity: 0;
+}
+
+.titles[data-inviewport].is-inViewport{
+    opacity: 1;
+    animation: moveInLeft 3s;
+}

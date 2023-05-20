@@ -1,0 +1,14 @@
+{
+  "name": "cv-online",
+  "version": "1.0.0",
+  "description": "CV JPHUR",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass":"node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "jphur",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "9.0.0"
+  }
+}
