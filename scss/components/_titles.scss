@@ -1,12 +1,4 @@
 .titles{
-
-    @media (max-width:900px){
-        font-size: $title-medium;
-    }
-    @media (max-width:650px){
-        font-size: $title-small;
-        margin-left: .8rem;
-    }
     display: inline-block;
     font-size: $title-big;
     text-transform: uppercase;
@@ -15,9 +7,19 @@
     letter-spacing: .2rem;
     margin-bottom: 5rem;
     transition: 1s;
+    
     &:hover{
         transform: scale(1.1) skewX(-15deg);
 
+    }
+
+    @media (max-width:900px){
+        font-size: $title-medium;
+    }
+    
+    @media (max-width:650px){
+        font-size: $title-small;
+        margin-left: .8rem;
     }
 }
 

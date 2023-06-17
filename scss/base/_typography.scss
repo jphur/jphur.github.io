@@ -1,16 +1,36 @@
 *{
     font-weight: 400;
+    font-size: 16px;
+}
+
+div, p, a {
+    font-size: $desktop-font;
+
+    @media screen and (max-width: 768px) {
+        font-size: $tablet-font;
+    }
+
+    
+    @media screen and (max-width: 480px) {
+        font-size: $mobile-font;
+    }
+}
+
+main {
+    font-family: "Roboto";
+    overflow-x: hidden;
 }
 
 .heading-primary {
     @media (max-width:1200px){
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
+
     color: $color-white;
     text-transform: uppercase;
     white-space: nowrap; /* Keeps the content on a single line */
     margin-bottom: 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: .5rem;
     animation-name: moveInTop;
     animation-duration: 5s;

@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jorge.dev</title>
     <link rel="icon" href="/img/computer.png">
-    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <script defer src="/js/main.min.js"></script>
+    <link rel="stylesheet" href="/libraries/bootstrap/bootstrap.min.css">
+    <script defer src="/js/main.js"></script>
+    <script defer src="/libraries/bootstrap/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <!--HEADER-->
@@ -36,19 +38,27 @@
             <h2 class="animated-cursor">Vamos a programar!</h2>
         </div>
     </header>
-    <!--Sobre mí-->
-    <section class="about-me" id="about-me">
-        <h2 class="about-me__title titles" data-inviewport>Sobre mí</h2>
-        <div class="about-me__container u-horizontal-center"  data-inviewport>
-            <div class="about-me__container__img">
-                <img src="/img/me.jpg" alt="">
+    <main>
+            <!--Sobre mí-->
+    <section class="about-me container-fluid px-5" id="about-me">
+        <div class="row">
+            <div class="col">
+                <h2 class="about-me__title titles" data-inviewport>Sobre mí</h2>
             </div>
-
-            <div class="about-me__container__text u-zoom ">
-                <p class="u-mb-little">
-                    Me encanta la programación, por ello, me mantengo en constante aprendizaje. Actualmente, estoy aprendiendo a usar Docker, Sass, TypeScript, metodología BEM y arquitectura Hexagonal.
-                </p>
-                <p class="u-mt-little">Además, de manera adicional, tengo interés en la administración en bases de datos, redes y sistemas.</p>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-2">
+                <div class="about-me__photo-container">
+                    <img class="about-me__photo" src="/img/me.jpg" alt="me.jpg">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="about-me__text-container u-zoom ">
+                    <p class="about-me__text">
+                        Me encanta la programación, por ello, me mantengo en constante aprendizaje. Actualmente, estoy aprendiendo a usar Docker, Sass, TypeScript, metodología BEM y arquitectura Hexagonal.
+                    </p>
+                    <p class="about-me__text">Además, de manera adicional, tengo interés en la administración en bases de datos, redes y sistemas.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -143,6 +153,20 @@
                             <path
                                 d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                         </svg>
+                        <svg fill="#FFD700" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        </svg>
+                        <svg fill="#FFD700" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        </svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M45,4H5C4.447,4,4,4.448,4,5v40c0,0.552,0.447,1,1,1h40c0.553,0,1-0.448,1-1V5C46,4.448,45.553,4,45,4z M29,26.445h-5V42h-4	V26.445h-5V23h14V26.445z M30.121,41.112v-4.158c0,0,2.271,1.712,4.996,1.712c2.725,0,2.62-1.782,2.62-2.026	c0-2.586-7.721-2.586-7.721-8.315c0-7.791,11.25-4.717,11.25-4.717l-0.14,3.704c0,0-1.887-1.258-4.018-1.258s-2.9,1.013-2.9,2.096	c0,2.795,7.791,2.516,7.791,8.141C42,44.955,30.121,41.112,30.121,41.112z"/></svg>
+                        TypeScript
                         <svg fill="#FFD700" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                             <path
@@ -450,6 +474,7 @@
           </div>
         </div>
     </section>
+    </main>
     <!--footer-->
     <footer class="footer u-horizontal-center">
         <div class="footer__container">

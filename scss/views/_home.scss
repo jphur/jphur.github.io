@@ -59,155 +59,39 @@
     }
 }
 .about-me {
-    padding: $padding-big;
-    height: 35rem;
-
-    @media (max-width:1400px) {
-        height: 25rem;
-    }
-
-    @media (max-width:850px) {
-        height: 25rem;
-    }
-
-    @media(max-width:685px) {
-        height: auto;
-    }
-
     &__title {
         margin-bottom: 5rem;
         margin-top: 1rem;
     }
 
-    &__container {
-        @media (max-width:1400px) {
-            width: 70rem;
-        }
+    &__photo-container {
+        width: 14rem;
+        height: 14rem;
+        border: .4rem solid $color-green;
+        border-radius: 50%;
+        overflow: hidden;
+        @include flexible(flex, row, nowrap, center, center);
+    }
 
-        @media (max-width:1200px) {
-            width: 60rem;
-        }
+    &__photo {
+        width: 12rem;
+        height: 15.5rem;
+    }
 
-        @media (max-width:1000px) {
-            width: 50rem;
-        }
-
-        @media (max-width:850px) {
-            width: 40rem;
-        }
-
-        @media (max-width:685px) {
-            flex-direction: column;
-            justify-content: center;
-            width: 80vw;
-        }
-
+    &__text-container {
         display: flex;
-        justify-content: space-between;
-        width: 80.75rem;
-        align-items: center;
-        
-        &__img {
-            @media (max-width:1400px) {
-                width: 14.5rem;
-                height: 14.5rem;
-            }
-
-            @media (max-width:1200px) {
-                width: 12.5rem;
-                height: 12.5rem;
-            }
-
-            @media (max-width:850px) {
-                width: 8.5rem;
-                height: 8.5rem;
-            }
-
-            @media (max-width:685px) {
-                margin-bottom: 1rem;
-            }
-
-            width: 17.5rem;
-            height: 17.5rem;
-            border: .4rem solid $color-green;
-            border-radius: 50%;
-            overflow: hidden;
-
-            img {
-                @media (max-width:1400px) {
-                    width: 14.5rem;
-                }
-
-                @media (max-width:1200px) {
-                    width: 12.5rem;
-                }
-
-                @media (max-width:850px) {
-                    width: 10.5rem;
-                }
-
-                @media (max-width:850px) {
-                    width: 8.5rem;
-                }
-
-                width: 17.5rem;
-            }
-        }
-
-        &__text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: $color-gray;
-            flex-basis: 48rem;
-            color: $color-white;
-            padding: $padding-medium;
-            font-size: $desktop-font;
-            line-height: 1.5;
-            height: 13rem;
-            box-shadow: .4rem .4rem .4rem $color-gray;
-
-            @media (max-width:1400px) {
-                flex-basis: 42rem;
-                height: 11rem;
-                font-size: $tablet-font;
-            }
-
-            @media (max-width:1200px) {
-                flex-basis: 38rem;
-                font-size: 1rem;
-            }
-
-            @media (max-width:1000px) {
-                flex-basis: 30rem;
-
-            }
-
-            @media (max-width:850px) {
-                flex-basis: 25rem;
-                height: 10rem;
-                font-size: $mobile-font;
-                padding: $padding-medium;
-            }
-
-            @media (max-width:685px) {
-                flex-basis: 13rem;
-                width: 70vw;
-            }
-
-            @media (max-width:425px) {
-                flex-basis: 16rem;
-            }
-
-        }
+        flex-direction: column;
+        justify-content: center;
+        background-color: $color-gray;
+        flex-basis: 48rem;
+        color: $color-white;
+        padding: $padding-medium;
+        font-size: $desktop-font;
+        line-height: 1.5;
+        height: 13rem;
+        box-shadow: .4rem .4rem .4rem $color-gray;
     }
-    &__container[data-inviewport]{
-        opacity: 0;
-    }
-    &__container[data-inviewport].is-inViewport {
-        opacity: 1;
-        animation: moveInBottom 3s;
-    }
+    
 }
 .skills {
     padding: $padding-big;

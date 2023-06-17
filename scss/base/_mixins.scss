@@ -1,0 +1,23 @@
+@mixin grid($columnas, $espacio) {
+    display: grid;
+    grid-template-columns: repeat($columnas, $grid-col);
+    $gap: $espacio;
+
+    @media (max-width:480px) {
+        grid-template-columns: $grid-col;
+        gap: 0em;
+    }
+}
+
+@mixin flexible($display, $direction, $wrap, $justify, $align) {
+    display: $display;
+    flex-flow: $direction $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin mv($mesure: 480px) {
+    @media screen and (max-width: $mesure) {
+        @content;
+    }
+}

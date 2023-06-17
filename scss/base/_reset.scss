@@ -1,0 +1,14 @@
+svg {
+    width: 1.5rem;
+    vertical-align: middle;
+
+    @media (max-width:500px){
+        width: 1.2rem;
+    }
+}
+
+a {
+    &:hover {
+        color: $color-white;
+    }
+}
