@@ -137,10 +137,6 @@ div, p, a, dd {
   }
 }
 
-dt {
-  font-size: 1.2rem;
-}
-
 main {
   font-family: "Roboto";
   overflow-x: hidden;
@@ -151,7 +147,7 @@ main {
   text-transform: uppercase;
   white-space: nowrap; /* Keeps the content on a single line */
   margin-bottom: 1rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.5rem;
   animation-name: moveInTop;
   animation-duration: 5s;
@@ -167,12 +163,26 @@ main {
   font-size: 1.5rem;
 }
 
+.content-title {
+  font-size: 1.5rem;
+}
+
+.content-subtitle {
+  font-size: 1.3rem;
+}
+
 @media screen and (max-width: 1200px) {
   .heading-primary {
     font-size: 2.5rem;
   }
   .heading-secondary {
     font-size: 1rem;
+  }
+  .content-title {
+    font-size: 1.3rem;
+  }
+  .content-subtitle {
+    font-size: 1.1rem;
   }
 }
 .u-zoom {
@@ -453,7 +463,6 @@ ul {
   background-color: #b7b7b7;
   color: #fff;
   padding: 1rem;
-  font-size: 1.1rem;
   line-height: 1.5;
   height: 13rem;
   box-shadow: 0.4rem 0.4rem 0.4rem #b7b7b7;
@@ -501,33 +510,12 @@ ul {
   grid-template-areas: "experiences education" "experiences languages";
   grid-template-columns: 1fr 0.8fr;
 }
-.skills__box-title {
-  font-size: 1.5rem;
-}
-@media (max-width: 1000px) {
-  .skills__box-title {
-    font-size: 1.1rem;
-  }
-}
-@media (max-width: 700px) {
-  .skills__box-title {
-    font-size: 0.9rem;
-  }
-}
-.skills__subtitle {
-  margin-bottom: 0.5rem;
-}
-.skills dd {
+.skills__text {
   margin-bottom: 2rem;
   letter-spacing: 0.1rem;
 }
 .skills__items {
   margin-bottom: 2rem;
-}
-@media (max-width: 700px) {
-  .skills {
-    font-size: 0.8rem;
-  }
 }
 .skills__experiences-box {
   grid-area: experiences;

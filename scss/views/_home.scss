@@ -87,7 +87,6 @@
         background-color: $gray;
         color: $white;
         padding: $padding-medium;
-        font-size: $f-desktop;
         line-height: 1.5;
         height: 13rem;
         box-shadow: .4rem .4rem .4rem $gray;
@@ -140,17 +139,10 @@
         grid-template-areas: "experiences education" "experiences languages";
         grid-template-columns: 1fr .8fr;
     }
-    &__box-title {
-        font-size: 1.5rem;
-        @media (max-width:1000px) { font-size: 1.1rem }
-        @media (max-width:700px) { font-size: .9rem }
-    }
 
-    &__subtitle {
-        margin-bottom: $margin-small;
-    }
 
-    dd {
+
+    &__text {
         margin-bottom: 2rem;
         letter-spacing: .1rem;
     }
@@ -158,11 +150,6 @@
     &__items {
         margin-bottom: 2rem;
     }
-
-    @media (max-width:700px) {
-        font-size: $f-mobile;
-    }
-
     
     &__experiences-box {
         grid-area: experiences;
