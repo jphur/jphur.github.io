@@ -14,18 +14,18 @@
     &__links {
         /*Añado un breakpoint para la resolución de tablet*/
         @media (max-width:1400px) {
-            font-size: $desktop-font;
+            font-size: $f-desktop;
         }
 
         @media (max-width:1000px) {
-            font-size: $tablet-font;
+            font-size: $f-tablet;
         }
 
         @media (max-width:768px) {
-            font-size: $mobile-font;
+            font-size: $f-mobile;
         }
 
-        color: $color-white;
+        color: $white;
         text-decoration: none;
         margin: 0 1.5rem;
         font-size: 1.6rem;
@@ -41,7 +41,7 @@
 
 .topnav {
     overflow: hidden;
-    background-color: $color-light-green;
+    background-color: $light-green;
     position: relative;
     min-height: 2rem;
 
@@ -49,7 +49,7 @@
         display: none;
 
         &__links {
-            color: $color-white;
+            color: $white;
             text-decoration: none;
             padding: 0 1.5rem;
             font-size: 1.4rem;

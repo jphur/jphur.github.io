@@ -2,8 +2,6 @@
     transition: 1s;
     
     &:hover{
-        @media (min-width:685px) {
-            transform: translateY(-1rem) scale(1.05);
-        }
+        @media screen and (min-width: 800px) { transform: translateY(-1rem) scale(1.05); }
     }
 }

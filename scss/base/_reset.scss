@@ -1,14 +1,17 @@
 svg {
     width: 1.5rem;
     vertical-align: middle;
-
-    @media (max-width:500px){
-        width: 1.2rem;
-    }
+    @include mv(500px){ width: 1.2rem; }
 }
 
 a {
-    &:hover {
-        color: $color-white;
-    }
+    text-decoration: none!important;
+
+    &:hover { color: $white; }
+}
+
+section {
+    min-height: 60vh;
+    padding: $padding-huge;
+    @include mv() { padding: $padding-big}
 }

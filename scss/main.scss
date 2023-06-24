@@ -9,8 +9,11 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import "bootstrap/custom-styles";
+
+@import "components/animated-cursor";
 @import "components/button";
-@import "components/custombox";
+@import "components/box";
 @import "components/titles";
 
 @import "layout/footer";

@@ -1,24 +1,21 @@
 //COLORS
-$color-white: #fff;
-$color-white-hover:rgb(230, 223, 223);
-$color-blue: #0075f2;
-$color-green: rgb(9, 107, 114);
-$color-light-green: #37af37;
-$color-brown: #7F675B;
-$color-gray: #b7b7b7;
+$white: #fff;
+$blue: #0075f2;
+$green: rgb(9, 107, 114);
+$light-green: #37af37;
+$brown: #7F675B;
+$gray: #b7b7b7;
 
 //PADDINGS AND MARGINS
-$padding-big: 2rem;
+$padding-huge: 3rem!important;
+$padding-big: 2.4rem!important;
 $padding-medium: 1rem;
 $padding-small: .5rem;
 $margin-big: 2rem;
 $margin-small: .5rem;
 
 //letter 
-$title-big: 2rem;
-$title-medium: 1.5rem;
-$title-small: 1.3rem;
-
-$desktop-font: 1.1rem;
-$tablet-font: .9rem;
-$mobile-font: .8rem;
+$f-desktop: 1.1rem;
+$f-laptop: .9rem;
+$f-tablet: .85rem;
+$f-mobile: .8rem;

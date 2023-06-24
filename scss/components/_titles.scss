@@ -1,24 +1,24 @@
 .titles{
     display: inline-block;
-    font-size: $title-big;
+    font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: 700;
-    color: $color-green;
+    color: $green;
     letter-spacing: .2rem;
     margin-bottom: 5rem;
     transition: 1s;
     
     &:hover{
-        transform: scale(1.1) skewX(-15deg);
+        @include mv(768px) { transform: scale(1.1) skewX(-15deg); }
 
     }
 
     @media (max-width:900px){
-        font-size: $title-medium;
+        font-size: 1.3rem;
     }
     
     @media (max-width:650px){
-        font-size: $title-small;
+        font-size: 1.15;
         margin-left: .8rem;
     }
 }

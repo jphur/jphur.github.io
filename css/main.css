@@ -82,22 +82,35 @@
   padding: 0;
 }
 
-a {
-  text-decoration: none;
+ul {
+  list-style: none;
 }
 
 svg {
   width: 1.5rem;
   vertical-align: middle;
 }
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
   svg {
     width: 1.2rem;
   }
 }
 
+a {
+  text-decoration: none !important;
+}
 a:hover {
   color: #fff;
+}
+
+section {
+  min-height: 60vh;
+  padding: 3rem !important;
+}
+@media screen and (max-width: 480px) {
+  section {
+    padding: 2.4rem !important;
+  }
 }
 
 * {
@@ -105,18 +118,27 @@ a:hover {
   font-size: 16px;
 }
 
-div, p, a {
+div, p, a, dd {
   font-size: 1.1rem;
 }
-@media screen and (max-width: 768px) {
-  div, p, a {
+@media screen and (max-width: 1000px) {
+  div, p, a, dd {
     font-size: 0.9rem;
   }
 }
+@media screen and (max-width: 768px) {
+  div, p, a, dd {
+    font-size: 0.85rem;
+  }
+}
 @media screen and (max-width: 480px) {
-  div, p, a {
+  div, p, a, dd {
     font-size: 0.8rem;
   }
+}
+
+dt {
+  font-size: 1.2rem;
 }
 
 main {
@@ -129,15 +151,10 @@ main {
   text-transform: uppercase;
   white-space: nowrap; /* Keeps the content on a single line */
   margin-bottom: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: 0.5rem;
   animation-name: moveInTop;
   animation-duration: 5s;
-}
-@media (max-width: 1200px) {
-  .heading-primary {
-    font-size: 1.5rem;
-  }
 }
 
 .heading-secondary {
@@ -147,20 +164,33 @@ main {
   font-weight: 400;
   animation-name: moveInBottom;
   animation-duration: 5s;
-}
-@media (max-width: 1200px) {
-  .heading-secondary {
-    font-size: 1.1rem;
-  }
+  font-size: 1.5rem;
 }
 
+@media screen and (max-width: 1200px) {
+  .heading-primary {
+    font-size: 2.5rem;
+  }
+  .heading-secondary {
+    font-size: 1rem;
+  }
+}
 .u-zoom {
   transition: 1s;
 }
-@media (min-width: 685px) {
+@media screen and (min-width: 800px) {
   .u-zoom:hover {
     transform: translateY(-1rem) scale(1.05);
   }
+}
+
+ul {
+  padding-left: 0 !important;
+}
+
+.animated-cursor {
+  font-size: 1.5rem;
+  font-weight: initial;
 }
 
 .button {
@@ -171,21 +201,33 @@ main {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
-
 .button:hover {
   background: #ddd;
 }
 
-.custombox {
-  background-color: rgb(9, 107, 114);
-  box-shadow: 2px 2px 2px gray;
-  transform: skewX(-15deg);
+.box {
+  color: #fff;
   padding: 1rem;
+}
+.box--rounded {
+  border-radius: 0.4rem;
+}
+.box--inclined {
+  transform: skewX(-15deg);
+}
+.box--light-green {
+  background-color: #37af37;
+}
+.box--green {
+  background-color: rgb(9, 107, 114);
+}
+.box--brown {
+  background-color: #7F675B;
 }
 
 .titles {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 700;
   color: rgb(9, 107, 114);
@@ -193,17 +235,19 @@ main {
   margin-bottom: 5rem;
   transition: 1s;
 }
-.titles:hover {
-  transform: scale(1.1) skewX(-15deg);
+@media screen and (max-width: 768px) {
+  .titles:hover {
+    transform: scale(1.1) skewX(-15deg);
+  }
 }
 @media (max-width: 900px) {
   .titles {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 650px) {
   .titles {
-    font-size: 1.3rem;
+    font-size: 1.15;
     margin-left: 0.8rem;
   }
 }
@@ -218,39 +262,9 @@ main {
 }
 
 .footer {
-  height: 150px;
+  min-height: 8rem;
   background-color: #b7b7b7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 650px) {
-  .footer {
-    height: 130px;
-    font-size: 0.9rem;
-  }
-}
-.footer__container {
   color: #fff;
-}
-.footer__container h4 {
-  font-size: 1.5rem;
-}
-@media (max-width: 650px) {
-  .footer__container h4 {
-    font-size: 1.2rem;
-  }
-}
-.footer__container__links {
-  display: flex;
-  justify-content: center;
-}
-.footer__container a {
-  margin-left: 0.5rem;
-  text-decoration: none;
-}
-.footer__container p {
-  text-align: center;
 }
 
 .nav {
@@ -284,7 +298,7 @@ main {
 }
 @media (max-width: 1000px) {
   .nav__links {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
 @media (max-width: 768px) {
@@ -406,14 +420,13 @@ main {
   /*Esto es para que este solo en una línea*/
 }
 
-.about-me__title {
-  margin-bottom: 5rem;
-  margin-top: 1rem;
+.about-me {
+  padding: 3rem !important;
 }
 .about-me__photo-container {
   width: 14rem;
   height: 14rem;
-  border: 0.4rem solid rgb(9, 107, 114);
+  border: 0.35rem solid rgb(9, 107, 114);
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -421,16 +434,23 @@ main {
   justify-content: center;
   align-items: center;
 }
+.about-me__photo-container[data-inviewport] {
+  opacity: 0;
+}
+.about-me__photo-container[data-inviewport].is-inViewport {
+  opacity: 1;
+  animation: moveInTop 3s;
+}
 .about-me__photo {
   width: 12rem;
   height: 15.5rem;
 }
 .about-me__text-container {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: center;
+  align-items: normal;
   background-color: #b7b7b7;
-  flex-basis: 48rem;
   color: #fff;
   padding: 1rem;
   font-size: 1.1rem;
@@ -438,142 +458,136 @@ main {
   height: 13rem;
   box-shadow: 0.4rem 0.4rem 0.4rem #b7b7b7;
 }
+.about-me__text-container[data-inviewport] {
+  opacity: 0;
+}
+.about-me__text-container[data-inviewport].is-inViewport {
+  opacity: 1;
+  animation: moveInBottom 3s;
+}
+@media screen and (max-width: 1400px) {
+  .about-me__photo-container {
+    width: 12rem;
+    height: 12rem;
+    border: 0.3rem solid rgb(9, 107, 114);
+  }
+  .about-me__photo {
+    width: 10rem;
+    height: 13.5rem;
+  }
+  .about-me__text-container {
+    height: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about-me__photo-container {
+    width: 8.5rem;
+    height: 8.5rem;
+    border: 0.2rem solid rgb(9, 107, 114);
+  }
+  .about-me__photo {
+    width: 7rem;
+    height: 9rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about-me {
+    padding: 2.4rem !important;
+  }
+}
 
-.skills {
-  padding: 2rem;
-  height: 45rem;
-  /*BUSCAR list-style-image: url(imagen ruta)*/
-}
-@media (max-width: 1000px) {
-  .skills {
-    height: 65rem;
-  }
-}
-@media (max-width: 685px) {
-  .skills {
-    height: 61rem;
-  }
-}
-@media (max-width: 600px) {
-  .skills {
-    height: 71rem;
-  }
-}
-.skills__wrapper {
+.skills__boxes-container {
   display: grid;
-  width: 80vw;
-  height: 30rem;
-  grid-template-areas: "back front front" "back general general";
-  color: #fff;
-  max-width: 100rem;
-  font-size: 0.9rem;
+  grid-template-areas: "experiences education" "experiences languages";
+  grid-template-columns: 1fr 0.8fr;
 }
-@media (max-width: 1000px) {
-  .skills__wrapper {
-    grid-template-areas: "back back" "front front" "general general";
-  }
-}
-.skills__wrapper h3 {
+.skills__box-title {
   font-size: 1.5rem;
 }
 @media (max-width: 1000px) {
-  .skills__wrapper h3 {
+  .skills__box-title {
     font-size: 1.1rem;
   }
 }
 @media (max-width: 700px) {
-  .skills__wrapper h3 {
+  .skills__box-title {
     font-size: 0.9rem;
   }
 }
-.skills__wrapper dt {
-  font-size: 1.2rem;
+.skills__subtitle {
   margin-bottom: 0.5rem;
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
 }
-@media (max-width: 1000px) {
-  .skills__wrapper dt {
-    font-size: 1.05rem;
-  }
-}
-.skills__wrapper dd {
-  font-size: 1rem;
+.skills dd {
   margin-bottom: 2rem;
   letter-spacing: 0.1rem;
 }
-@media (max-width: 700px) {
-  .skills__wrapper dd {
-    font-size: 0.8rem;
-  }
-}
-.skills__wrapper ul {
-  list-style: none;
-}
-.skills__wrapper li {
+.skills__items {
   margin-bottom: 2rem;
 }
 @media (max-width: 700px) {
-  .skills__wrapper {
+  .skills {
     font-size: 0.8rem;
   }
 }
-.skills__wrapper__experiences {
-  grid-area: back;
-  background-color: #37af37;
+.skills__experiences-box {
+  grid-area: experiences;
 }
-.skills__wrapper__experiences[data-inviewport] {
+.skills__experiences-box[data-inviewport] {
   opacity: 0;
 }
-.skills__wrapper__experiences[data-inviewport].is-inViewport {
+.skills__experiences-box[data-inviewport].is-inViewport {
   animation: moveInLeft 3s;
   animation-fill-mode: forwards;
 }
 @media (max-width: 1000px) {
-  .skills__wrapper__experiences[data-inviewport].is-inViewport {
+  .skills__experiences-box[data-inviewport].is-inViewport {
     animation: moveInTop 2s;
     animation-fill-mode: forwards;
   }
 }
-.skills__wrapper__education {
-  grid-area: front;
-  background-color: rgb(9, 107, 114);
+.skills__education-box {
+  grid-area: education;
 }
-.skills__wrapper__education[data-inviewport] {
+.skills__education-box[data-inviewport] {
   opacity: 0;
 }
-.skills__wrapper__education[data-inviewport].is-inViewport {
+.skills__education-box[data-inviewport].is-inViewport {
   animation: moveInTop 3s;
   animation-fill-mode: forwards;
 }
 @media (max-width: 1000px) {
-  .skills__wrapper__education[data-inviewport].is-inViewport {
+  .skills__education-box[data-inviewport].is-inViewport {
     animation: moveInTop 2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
   }
 }
-.skills__wrapper__languages {
-  grid-area: general;
-  background-color: #7F675B;
+.skills__languages-box {
+  grid-area: languages;
 }
-.skills__wrapper__languages[data-inviewport] {
+.skills__languages-box[data-inviewport] {
   opacity: 0;
 }
-.skills__wrapper__languages[data-inviewport].is-inViewport {
+.skills__languages-box[data-inviewport].is-inViewport {
   animation: moveInRight 3s;
   animation-fill-mode: forwards;
 }
 @media (max-width: 1000px) {
-  .skills__wrapper__languages[data-inviewport].is-inViewport {
+  .skills__languages-box[data-inviewport].is-inViewport {
     animation: moveInTop 2s;
     animation-fill-mode: forwards;
     animation-delay: 1s;
   }
 }
+@media (max-width: 1000px) {
+  .skills__boxes-container {
+    grid-template-areas: "experiences" "education" "languages";
+    grid-template-columns: 1fr;
+  }
+}
 
 .codes {
-  padding: 2rem;
+  padding: 2.4rem !important;
   height: 30rem;
   position: relative;
   margin-bottom: 1rem;
@@ -674,7 +688,7 @@ main {
 }
 @media (max-width: 685px) {
   .codes__container__box__title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
 .codes__container__box__list {
@@ -683,7 +697,7 @@ main {
 }
 @media (max-width: 1000px) {
   .codes__container__box__list {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
 @media (max-width: 685px) {

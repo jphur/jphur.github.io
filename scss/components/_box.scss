@@ -1,0 +1,11 @@
+.box {
+    color: $white;
+    padding: $padding-medium;
+
+    &--rounded {  border-radius: .4rem }
+    &--inclined {  transform: skewX(-15deg) }
+
+    &--light-green { background-color: $light-green }
+    &--green { background-color: $green }
+    &--brown { background-color: $brown }
+}

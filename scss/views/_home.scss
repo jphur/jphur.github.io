@@ -1,7 +1,7 @@
 .header {
     height: 80vh;
     width: 100%;
-    background-color: $color-green;
+    background-color: $green;
     position: relative;
 
 
@@ -43,7 +43,7 @@
     }
     
     &__greeting {
-        color: $color-white;
+        color: $white;
         position: absolute;
         top: 70%;
         left: 50%;
@@ -53,24 +53,28 @@
         width: 14rem;
         /*Ancho del texto*/
         overflow: hidden;
-        border-right: 0.05em solid $color-white;
+        border-right: 0.05em solid $white;
         white-space: nowrap;
         /*Esto es para que este solo en una línea*/
     }
 }
 .about-me {
-    &__title {
-        margin-bottom: 5rem;
-        margin-top: 1rem;
-    }
-
+    padding: $padding-huge;
+    
     &__photo-container {
         width: 14rem;
         height: 14rem;
-        border: .4rem solid $color-green;
+        border: .35rem solid $green;
         border-radius: 50%;
         overflow: hidden;
         @include flexible(flex, row, nowrap, center, center);
+
+    }
+    &__photo-container[data-inviewport]{ opacity: 0 }
+    
+    &__photo-container[data-inviewport].is-inViewport{
+        opacity: 1;
+        animation: moveInTop 3s;
     }
 
     &__photo {
@@ -79,147 +83,137 @@
     }
 
     &__text-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: $color-gray;
-        flex-basis: 48rem;
-        color: $color-white;
+        @include flexible(flex, column, nowrap, center, normal);
+        background-color: $gray;
+        color: $white;
         padding: $padding-medium;
-        font-size: $desktop-font;
+        font-size: $f-desktop;
         line-height: 1.5;
         height: 13rem;
-        box-shadow: .4rem .4rem .4rem $color-gray;
+        box-shadow: .4rem .4rem .4rem $gray;
     }
+
+    &__text-container[data-inviewport]{ opacity: 0 }
     
+    &__text-container[data-inviewport].is-inViewport{
+        opacity: 1;
+        animation: moveInBottom 3s;
+    }
+
+    @include mv(1400px) {
+
+        &__photo-container {
+            width: 12rem;
+            height: 12rem;
+            border: .3rem solid $green;
+        }
+
+        &__photo {
+            width: 10rem;
+            height: 13.5rem;
+         }
+
+        &__text-container { height: auto }
+    }
+
+    @include mv(768px) {
+
+        &__photo-container {
+            width: 8.5rem;
+            height: 8.5rem;
+            border: .2rem solid $green;
+        }
+
+        &__photo {
+            width: 7rem;
+            height: 9rem;
+        }
+    }
+
+    @include mv() { padding: $padding-big }
 }
+
 .skills {
-    padding: $padding-big;
-    height: 45rem;
 
-    @media (max-width:1000px) {
-
-        height: 65rem;
-    }
-
-    @media (max-width:685px) {
-
-        height: 61rem;
-    }
-
-    @media(max-width:600px) {
-        height: 71rem;
-    }
-    
-    /*BUSCAR list-style-image: url(imagen ruta)*/
-    &__wrapper {
-        @media (max-width:1000px) {
-            grid-template-areas: "back back" "front front" "general general";
-        }
-
+    &__boxes-container { 
         display: grid;
-        width: 80vw;
-        height: 30rem;
-        grid-template-areas: "back front front" "back general general";
-        color: $color-white;
-        max-width: 100rem;
+        grid-template-areas: "experiences education" "experiences languages";
+        grid-template-columns: 1fr .8fr;
+    }
+    &__box-title {
+        font-size: 1.5rem;
+        @media (max-width:1000px) { font-size: 1.1rem }
+        @media (max-width:700px) { font-size: .9rem }
+    }
 
-        h3 {
-            font-size: 1.5rem;
+    &__subtitle {
+        margin-bottom: $margin-small;
+    }
 
-            @media (max-width:1000px) {
-                font-size: $desktop-font;
-            }
+    dd {
+        margin-bottom: 2rem;
+        letter-spacing: .1rem;
+    }
 
-            @media (max-width:700px) {
-                font-size: $tablet-font;
-            }
-        }
+    &__items {
+        margin-bottom: 2rem;
+    }
 
-        dt {
-            @media (max-width:1000px) {
-                font-size: 1.05rem;
-            }
+    @media (max-width:700px) {
+        font-size: $f-mobile;
+    }
 
-            font-size: 1.2rem;
-            margin-bottom: $margin-small;
-            text-decoration: underline;
-            text-underline-offset: 0.2rem;
-        }
+    
+    &__experiences-box {
+        grid-area: experiences;
+    }
 
-        dd {
-            @media (max-width:700px) {
-                font-size: $mobile-font;
-            }
-
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            letter-spacing: .1rem;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin-bottom: 2rem;
-
-        }
-
-        font-size: $tablet-font;
-
-        @media (max-width:700px) {
-            font-size: $mobile-font;
-        }
-
-        &__experiences {
-            grid-area: back;
-            background-color: $color-light-green;
-
-        }
-
-        &__experiences[data-inviewport] {
-            opacity: 0;
-        }
-        &__experiences[data-inviewport].is-inViewport {
-            animation: moveInLeft 3s;
+    &__experiences-box[data-inviewport] {
+        opacity: 0;
+    }
+    &__experiences-box[data-inviewport].is-inViewport {
+        animation: moveInLeft 3s;
+        animation-fill-mode:forwards;
+        @media (max-width:1000px){
+            animation: moveInTop 2s;
             animation-fill-mode:forwards;
-            @media (max-width:1000px){
-                animation: moveInTop 2s;
-                animation-fill-mode:forwards;
-            }
         }
-        &__education {
-            grid-area: front;
-            background-color: $color-green;
-        }
-        &__education[data-inviewport] {
-            opacity: 0;
-        }
-        &__education[data-inviewport].is-inViewport {
-            animation: moveInTop 3s;
+    }
+    &__education-box {
+        grid-area: education;
+    }
+    &__education-box[data-inviewport] {
+        opacity: 0;
+    }
+    &__education-box[data-inviewport].is-inViewport {
+        animation: moveInTop 3s;
+        animation-fill-mode:forwards;
+        @media (max-width:1000px){
+            animation: moveInTop 2s;
+            animation-delay: .5s;
             animation-fill-mode:forwards;
-            @media (max-width:1000px){
-                animation: moveInTop 2s;
-                animation-delay: .5s;
-                animation-fill-mode:forwards;
-            }
         }
-        &__languages {
-            grid-area: general;
-            background-color: $color-brown;
-        }
-        &__languages[data-inviewport] {
-            opacity: 0;
-        }
-        &__languages[data-inviewport].is-inViewport {
-            animation: moveInRight 3s;
+    }
+    &__languages-box {
+        grid-area: languages;
+    }
+    &__languages-box[data-inviewport] {
+        opacity: 0;
+    }
+    &__languages-box[data-inviewport].is-inViewport {
+        animation: moveInRight 3s;
+        animation-fill-mode:forwards;
+        @media (max-width:1000px){
+            animation: moveInTop 2s;
             animation-fill-mode:forwards;
-            @media (max-width:1000px){
-                animation: moveInTop 2s;
-                animation-fill-mode:forwards;
-                animation-delay: 1s;
-            }
+            animation-delay: 1s;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        &__boxes-container { 
+            grid-template-areas: "experiences" "education" "languages"; 
+            grid-template-columns: 1fr; 
         }
     }
 }
@@ -242,7 +236,7 @@
         justify-content: space-around;
         width: 80vw;
         padding: 1rem;
-        color: $color-white;
+        color: $white;
 
         @media (max-width:1000px) {
             align-items: center;
@@ -258,7 +252,7 @@
             top: 40%;
             width: auto;
             padding: 8px 16px;
-            background-color: $color-gray;
+            background-color: $gray;
             color: black;
             font-weight: bold;
             font-size: 18px;
@@ -320,24 +314,24 @@
                 font-size: 1.5rem;
 
                 @media (max-width: 1000px) {
-                    font-size: $desktop-font;
+                    font-size: $f-desktop;
                 }
 
                 @media (max-width: 685px) {
-                    font-size: $tablet-font;
+                    font-size: $f-tablet;
                 }
             }
 
             &__list {
                 list-style: none;
-                font-size: $desktop-font;
+                font-size: $f-desktop;
 
                 @media (max-width: 1000px) {
-                    font-size: $tablet-font;
+                    font-size: $f-tablet;
                 }
 
                 @media (max-width: 685px) {
-                    font-size: $mobile-font;
+                    font-size: $f-mobile;
                 }
 
                 li:not(:last-child) {
