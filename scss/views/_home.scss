@@ -1,19 +1,13 @@
 .header {
-    height: 80vh;
-    width: 100%;
+    height: 80dvh;
     background-color: $green;
     position: relative;
 
-
-    @media (max-width:1000px) {
-        height: 50vh;
-    }
-
-    @media(max-width:685px) {
-        height: 75vh;
-    }
     &__canvas {
-        display: block; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
     }
    
     &__text-box {
@@ -22,44 +16,45 @@
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        z-index: 2;
     }
 
     &__icon {
-        @media (max-width:1200px) {
-            width: 8rem;
-        }
-
         position: absolute;
+        z-index: 2;
         top: 52%;
         left: 75%;
         transform: translate(-50%, -50%);
         width: 10rem;
         animation: fade;
         animation-duration: 5s;
-
-        @media (max-width:950px) {
-            display: none;
-        }
     }
     
     &__greeting {
         color: $white;
         position: absolute;
+        z-index: 2;
         top: 70%;
         left: 50%;
         transform: translate(-50%, -50%);
         animation: typing 2.5s steps(26), caret 1s steps(1) infinite;
-        /*Steps son los saltos de tiempo en ms*/
         width: 14rem;
-        /*Ancho del texto*/
         overflow: hidden;
         border-right: 0.05em solid $white;
         white-space: nowrap;
-        /*Esto es para que este solo en una línea*/
     }
+
+    @include mv(1200px) { &__icon {  width: 8rem } }
+
+    @include mv(1000px) { 
+        height: 50dvh;
+        &__icon { display: none }
+    }
+    
+    @include mv(685px) { height: 75dvh }
 }
+
 .about-me {
-    padding: $padding-huge;
     
     &__photo-container {
         width: 14rem;
@@ -128,8 +123,6 @@
             height: 9rem;
         }
     }
-
-    @include mv() { padding: $padding-big }
 }
 
 .skills {
@@ -139,8 +132,6 @@
         grid-template-areas: "experiences education" "experiences languages";
         grid-template-columns: 1fr .8fr;
     }
-
-
 
     &__text {
         margin-bottom: 2rem;
@@ -158,205 +149,96 @@
     &__experiences-box[data-inviewport] {
         opacity: 0;
     }
+
     &__experiences-box[data-inviewport].is-inViewport {
         animation: moveInLeft 3s;
-        animation-fill-mode:forwards;
-        @media (max-width:1000px){
-            animation: moveInTop 2s;
-            animation-fill-mode:forwards;
-        }
+        animation-fill-mode: forwards;
     }
+
     &__education-box {
         grid-area: education;
     }
+
     &__education-box[data-inviewport] {
         opacity: 0;
     }
+
     &__education-box[data-inviewport].is-inViewport {
         animation: moveInTop 3s;
         animation-fill-mode:forwards;
-        @media (max-width:1000px){
+    }
+
+    &__languages-box {
+        grid-area: languages;
+    }
+
+    &__languages-box[data-inviewport] {
+        opacity: 0;
+    }
+
+    &__languages-box[data-inviewport].is-inViewport {
+        animation: moveInRight 3s;
+        animation-fill-mode:forwards;
+    }
+
+    @media (max-width: 1000px) {
+
+        &__boxes-container { 
+            grid-template-areas: "experiences" "education" "languages"; 
+            grid-template-columns: 1fr; 
+        }
+
+        &__experiences-box[data-inviewport].is-inViewport {
+            animation: moveInTop 2s;
+            animation-fill-mode:forwards;
+        }
+
+        &__education-box[data-inviewport].is-inViewport {
             animation: moveInTop 2s;
             animation-delay: .5s;
             animation-fill-mode:forwards;
         }
-    }
-    &__languages-box {
-        grid-area: languages;
-    }
-    &__languages-box[data-inviewport] {
-        opacity: 0;
-    }
-    &__languages-box[data-inviewport].is-inViewport {
-        animation: moveInRight 3s;
-        animation-fill-mode:forwards;
-        @media (max-width:1000px){
+
+        &__languages-box[data-inviewport].is-inViewport {
             animation: moveInTop 2s;
             animation-fill-mode:forwards;
             animation-delay: 1s;
         }
     }
+}
+
+.codes {
+    &__container { display: flex }
+
+    &__box {
+        width: 15vw;
+        height: 20rem;
+        padding: $padding-medium;
+    }
+
+    @media(max-width: 1400px) { &__box { width: 20vw } }
+    @media (min-width: 1000px) {
+        &__box[data-inviewport] { opacity: 0 }
+    
+        &__box[data-inviewport].is-inViewport {
+            animation: moveSkew 2s;
+            animation-fill-mode: forwards;
+        }
+    }
 
     @media (max-width: 1000px) {
-        &__boxes-container { 
-            grid-template-areas: "experiences" "education" "languages"; 
-            grid-template-columns: 1fr; 
-        }
-    }
-}
-.codes {
-    padding: $padding-big;
-    height: 30rem;
-    position: relative;
-    margin-bottom: 1rem;
-
-    @media (max-width:1000px) {
-        height: 50%;
-    }
-
-    @media (max-width: 400px) {
-        padding: 2rem 1rem;
-    }
-
-    &__container {
-        display: flex;
-        justify-content: space-around;
-        width: 80vw;
-        padding: 1rem;
-        color: $white;
-
-        @media (max-width:1000px) {
-            align-items: center;
-            position: relative;
-            max-width: 35rem;
-        }
-
-        /* Next & previous buttons */
-        &__prev,
-        &__next {
-            cursor: pointer;
-            position: absolute;
-            top: 40%;
-            width: auto;
-            padding: 8px 16px;
-            background-color: $gray;
-            color: black;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 10%;
-            user-select: none;
-
-            @media (min-width: 1000px) {
-                display: none;
-            }
-        }
-
-        /* Position the "next button" to the right */
-        &__prev {
-            left: 3%;
-
-            @media (max-width:685px) {
-                left: -3%;
-            }
-
-            &:hover {
-                background-color: #cfcccc;
-            }
-
-        }
-
-        &__next {
-            right: 2.5%;
-
-            @media (max-width:685px) {
-                right: -3%;
-            }
-
-            &:hover {
-                background-color: #cfcccc;
-            }
-        }
-
-        &__box {
-
-            width: 15vw;
-            height: 19rem;
-
-
-            @media(max-width:1400px) {
-                width: 20vw;
-                height: 17rem;
-            }
-
-            @media (max-width:1000px) {
-                width: 60vw;
-                transform: skewX(0deg);
-                display: none;
-                height: 16rem;
-                max-width: 25rem;
-            }
-
-            &__title {
-                font-size: 1.5rem;
-
-                @media (max-width: 1000px) {
-                    font-size: $f-desktop;
-                }
-
-                @media (max-width: 685px) {
-                    font-size: $f-tablet;
-                }
-            }
-
-            &__list {
-                list-style: none;
-                font-size: $f-desktop;
-
-                @media (max-width: 1000px) {
-                    font-size: $f-tablet;
-                }
-
-                @media (max-width: 685px) {
-                    font-size: $f-mobile;
-                }
-
-                li:not(:last-child) {
-                    margin-bottom: 1rem;
-                }
-            }
-        }
-        @media (min-width: 1000px){ 
-            &__box[data-inviewport] {
-                opacity: 0;
-            }
-        
-            &__box[data-inviewport].is-inViewport {
-                animation: moveSkew 2s;
-                &:nth-child(2){
-                    animation-delay: 1s;
-                    animation-fill-mode: forwards;
-                }
-                &:nth-child(3){
-                    animation-delay: .5s;
-                    animation-fill-mode: forwards;
-                }
-                &:nth-child(4){
-                    animation-delay: 0s;
-                    animation-fill-mode: forwards;
-                } 
-            }
-        }
-    }
-
-
-    @media (max-width:1000px) {
-        &__container[data-inviewport]{
-            opacity: 0;
-        }
+        &__container[data-inviewport]{ opacity: 0 }
         &__container[data-inviewport].is-inViewport{
             opacity: 1;
             animation: fade 3s;
         }
+
+        &__box {
+            width: 60vw;
+            transform: skewX(0deg);
+            height: 17rem;
+            max-width: 25rem;
+        }
     }
+
 }

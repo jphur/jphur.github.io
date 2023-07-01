@@ -83,17 +83,10 @@
     }
 }
 
-  
-/* text animation */
-
 @keyframes typing {
-    from {
-        width: 0;
-    }/*Parte de ancho 0 hasta tener su ancho completo*/
+    from { width: 0 }
 }
 
 @keyframes caret {
-    50% {
-        border-color: transparent;
-    }
+    50% { border-color: transparent }
 }

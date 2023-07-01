@@ -9,7 +9,8 @@
 @import "base/typography";
 @import "base/utilities";
 
-@import "bootstrap/custom-styles";
+@import "vendors/bootstrap/custom-styles";
+@import "vendors/swipperjs/custom-styles";
 
 @import "components/animated-cursor";
 @import "components/button";
@@ -17,6 +18,5 @@
 @import "components/titles";
 
 @import "layout/footer";
-@import "layout/nav";
 
 @import "views/home";

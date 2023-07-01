@@ -5,13 +5,13 @@ svg {
 }
 
 a {
-    text-decoration: none!important;
-
-    &:hover { color: $white; }
+    text-decoration: none;
+    color: $white;
+    
 }
 
 section {
     min-height: 60vh;
     padding: $padding-huge;
-    @include mv() { padding: $padding-big}
+    @include mv() { padding: 2rem 1rem }
 }

@@ -50,3 +50,8 @@ main {
     .content-title { font-size: 1.3rem }
     .content-subtitle { font-size: 1.1rem }
 }
+
+@include mv(768px) {
+    .heading-primary { font-size: 2rem }
+    .heading-secondary { font-size: 1rem }
+}

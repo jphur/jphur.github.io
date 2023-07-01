@@ -1,0 +1,36 @@
+ul {
+    padding-left: 0;
+}
+
+dt {
+    font-weight: 500;
+}
+
+.navbar {
+    position: relative;
+    z-index: 2;
+
+}
+.nav-link {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: $white!important; 
+    &:active { color: $light-green!important }
+
+    @include mv(1200px) { font-size: 1.1rem }
+
+    @media screen and (min-width: 992px) { &:hover { color: $light-green!important } }
+
+    @include mv() { font-size: .95rem }
+}
+
+.navbar-toggler {
+    border: .05rem solid #8ebebf; 
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
