@@ -96,7 +96,7 @@ window.addEventListener("DOMContentLoaded", () => {
   els_inViewport.forEach(el => observer.observe(el, {}));
 
   canvas.width = header.offsetWidth;
-  let sizeHeight = (80 * header.offsetHeight) / 100; //desktop view
+  let sizeHeight = header.offsetHeight;
   canvas.height = sizeHeight;
 
   // Setting up the letters

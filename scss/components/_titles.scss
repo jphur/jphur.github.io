@@ -8,27 +8,15 @@
     margin-bottom: 5rem;
     transition: 1s;
     
-    &:hover{
-        @include mv(768px) { transform: scale(1.1) skewX(-15deg); }
-
+    @media screen and (min-width: 992px) {
+        &:hover{ transform: scale(1.1) skewX(-15deg) }
     }
-
-    @media (max-width:900px){
+    @include mv(900px){
         font-size: 1.3rem;
     }
     
-    @media (max-width:650px){
+    @include mv(650px){
         font-size: 1.15;
         margin-left: .8rem;
     }
 }
-
-/* .titles[data-inviewport]{
-    opacity: 0;
-}
-
-.titles[data-inviewport].is-inViewport{
-    opacity: 1;
-    animation: moveInLeft 3s;
-}
- */
